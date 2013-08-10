@@ -6,6 +6,6 @@ desktop.ini
 .buildpath
 .project
 .settings
-composer.lock
+composer.*
 pear-config-update
 vendor/*
