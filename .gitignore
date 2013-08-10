@@ -7,4 +7,5 @@ desktop.ini
 .project
 .settings
 composer.lock
+pear-config-update
 vendor/*
