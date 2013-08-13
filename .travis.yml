@@ -13,12 +13,13 @@ php:
 
 
 before_script:
+    - php /home/travis/.phpenv/versions/5.4.16/bin/composer.phar self-update
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar install
 
 script:
     - phpunit --version
-    - phpunit --coverage-text
+    - phpunit --coverage-text Tests
 #    - phpcs --standard=PSR0 --extensions=php --ignore=/vendor/* ./
 
 # after_script:
