@@ -1,0 +1,32 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # using major version aliases
+  # aliased to a recent 5.3.x version
+  - 5.3
+  # aliased to a recent 5.4.x version
+  - 5.4
+
+# before_install:
+
+
+before_script:
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install
+
+script:
+    - phpunit --version
+    - phpunit --coverage-text
+#    - phpcs --standard=PSR0 --extensions=php --ignore=/vendor/* ./
+
+# after_script:
+
+# configure notifications (email, IRC, campfire etc)
+notifications:
+  email:
+    recipients:
+      - Kenichi.beru222.Koyama@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
