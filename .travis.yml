@@ -19,7 +19,7 @@ before_script:
 
 script:
     - phpunit --version
-    - phpunit --coverage-text Tests
+    - phpunit --coverage-text tests
 #    - phpcs --standard=PSR0 --extensions=php --ignore=/vendor/* ./
 
 # after_script:
