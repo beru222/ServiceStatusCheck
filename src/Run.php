@@ -26,7 +26,7 @@
 if (!$loader = require_once __DIR__.'/../vendor/autoload.php') {
     die('You must set up the project dependencies.');
 }
-require_once '../SplClassLoader.php';
+require_once __DIR__ .'/../SplClassLoader.php';
 $classLoader = new SplClassLoader('ServiceStatusCheck', 'src');
 $classLoader->register();
 
