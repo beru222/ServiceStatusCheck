@@ -33,7 +33,8 @@
  class CommandMock extends Command {}
  */
 // require_once __DIR__ .'/../../../../src/ServiceStatusCheck/Command/HelloWorld.php';
-use ServiceStatusCheck\Command\HelloWorld;
+ use Cilex\Command\Command;
+ use ServiceStatusCheck\Command\HelloWorld;
  
  
  /**
@@ -53,8 +54,9 @@ use ServiceStatusCheck\Command\HelloWorld;
      public function setUp()
      {
          self::$srcPath = realpath(__DIR__ .'/../../../../src/');
+         print self::$srcPath .PHP_EOL;
          //$this->fixture = new CommandMock('hello:country');
-         //$this->helloWolrd = new HelloWorld;
+         // $this->helloWolrd = new \ServiceStatusCheck\Command\HelloWorld();
      }
  
      /**
@@ -62,9 +64,7 @@ use ServiceStatusCheck\Command\HelloWorld;
       */
      public function testExecute()
      {
-         //$obj = new HelloWorld;
-         
-         $last_line = system('php ' .self::$srcPath .'Run.php hello:country Japan', $retval);
-         $this->assertEquals("Hello Japan", $last_line);
+         $last_line = system('php ' .self::$srcPath .'Run.php hello:country', $retval);
+         $this->assertEquals("Hello" .PHP_EOL, $last_line);
      }
   }
