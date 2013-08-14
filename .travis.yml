@@ -14,16 +14,19 @@ php:
 
 before_script:
     - php /home/travis/.phpenv/versions/5.4.16/bin/composer.phar self-update
-    - php /home/travis/.phpenv/versions/5.4.16/bin/composer.phar install
+    - php /home/travis/.phpenv/versions/5.4.16/bin/composer.phar install --dev --no-interaction
     # - curl -s http://getcomposer.org/installer | php
     # - php composer.phar install
 
 script:
     - phpunit --version
-    - phpunit --coverage-text tests
+    - mkdir -p build/logs
+    - phpunit --coverage-clover build/logs/clover.xml tests
+#    - phpunit --coverage-text tests
 #    - phpcs --standard=PSR0 --extensions=php --ignore=/vendor/* ./
 
 # after_script:
+    - php vendor/bin/coveralls -v
 
 # configure notifications (email, IRC, campfire etc)
 notifications:

@@ -4,5 +4,8 @@
     },
     "autoload": {
         "psr-0": {"ServiceStatusCheck\\": "src/"}
+    },
+    "require-dev": {
+        "satooshi/php-coveralls": "dev-master"
     }
 }
