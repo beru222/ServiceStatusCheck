@@ -45,7 +45,6 @@
  class HelloWorldTest extends \PHPUnit_Framework_TestCase
  {
      /** @var \Cilex\Command\Command */
-     //protected $fixture = null;
      protected static $srcPath;
  
      /**
@@ -54,9 +53,6 @@
      public function setUp()
      {
          self::$srcPath = realpath(__DIR__ .'/../../../../src/');
-         print self::$srcPath .PHP_EOL;
-         //$this->fixture = new CommandMock('hello:country');
-         // $this->helloWolrd = new \ServiceStatusCheck\Command\HelloWorld();
      }
  
      /**
