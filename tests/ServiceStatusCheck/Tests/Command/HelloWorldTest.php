@@ -23,6 +23,7 @@
  * @version    
  *
  */
+ /*
  use Symfony\Component\Console\Input\InputArgument;
  use Symfony\Component\Console\Input\InputInterface;
  use Symfony\Component\Console\Input\InputOption;
@@ -30,6 +31,9 @@
  use Cilex\Command\Command;
  
  class CommandMock extends Command {}
+ */
+require_once __DIR__ .'/../../../../src/ServiceStatusCheck/Command/HelloWorld.php';
+ 
  
  /**
   * Command\Command test cases.
@@ -39,14 +43,17 @@
  class HelloWorldTest extends \PHPUnit_Framework_TestCase
  {
      /** @var \Cilex\Command\Command */
-     protected $fixture = null;
+     //protected $fixture = null;
+     protected static $srcPath;
  
      /**
       * Sets up the test fixture.
       */
      public function setUp()
      {
-         $this->fixture = new CommandMock('hello:country');
+         self::$srcPath = realpath(__DIR__ .'/../../../../src/');
+         //$this->fixture = new CommandMock('hello:country');
+         //$this->helloWolrd = new HelloWorld;
      }
  
      /**
@@ -54,7 +61,9 @@
       */
      public function testExecute()
      {
-         $last_line = system('php /src/Run.php hello:country Japan', $retval);
+         //$obj = new HelloWorld;
+         
+         $last_line = system('php ' .self::$srcPath .'Run.php hello:country Japan'', $retval);
          $this->assertEquals("Hello Japan\n", $retval);
      }
   }
