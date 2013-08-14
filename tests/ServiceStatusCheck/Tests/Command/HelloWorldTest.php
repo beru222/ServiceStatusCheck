@@ -65,6 +65,6 @@ use ServiceStatusCheck\Command\HelloWorld;
          //$obj = new HelloWorld;
          
          $last_line = system('php ' .self::$srcPath .'Run.php hello:country Japan', $retval);
-         $this->assertEquals("Hello Japan\n", $retval);
+         $this->assertEquals("Hello Japan", $last_line);
      }
   }
