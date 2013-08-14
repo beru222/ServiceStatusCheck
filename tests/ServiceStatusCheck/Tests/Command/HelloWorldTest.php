@@ -32,7 +32,8 @@
  
  class CommandMock extends Command {}
  */
-require_once __DIR__ .'/../../../../src/ServiceStatusCheck/Command/HelloWorld.php';
+// require_once __DIR__ .'/../../../../src/ServiceStatusCheck/Command/HelloWorld.php';
+use ServiceStatusCheck\Command\HelloWorld;
  
  
  /**
