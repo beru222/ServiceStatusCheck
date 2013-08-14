@@ -63,7 +63,7 @@ require_once __DIR__ .'/../../../../src/ServiceStatusCheck/Command/HelloWorld.ph
      {
          //$obj = new HelloWorld;
          
-         $last_line = system('php ' .self::$srcPath .'Run.php hello:country Japan'', $retval);
+         $last_line = system('php ' .self::$srcPath .'Run.php hello:country Japan', $retval);
          $this->assertEquals("Hello Japan\n", $retval);
      }
   }
