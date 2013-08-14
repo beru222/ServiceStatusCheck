@@ -64,7 +64,7 @@
       */
      public function testExecute()
      {
-         $last_line = system('php ' .self::$srcPath .'Run.php hello:country', $retval);
+         $last_line = system('php ' .self::$srcPath .'/Run.php hello:country', $retval);
          $this->assertEquals("Hello" .PHP_EOL, $last_line);
      }
   }
